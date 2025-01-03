@@ -9,9 +9,10 @@ import {
   FaStore,
 } from "react-icons/fa";
 import { MdSupport, MdOutlineExplore } from "react-icons/md";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+
 
 
 export default function Header() {
@@ -19,12 +20,16 @@ export default function Header() {
 
 
 
-  useEffect(() => {
+ useEffect(() => {
     AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      offset: 50,
+      duration: 1000, 
+      once: false, 
+      mirror: true, 
     });
+
+    return () => {
+      AOS.refresh();
+    };
   }, []);
 
   return (
@@ -37,7 +42,7 @@ export default function Header() {
         {/* Logo */}
         <Link to="/">
           <div className="text-lg font-bold flex items-center space-x-2">
-            <span className="text-red-500">ZHIYUN</span>
+            <span className="text-red-500">CompanyLogo</span>
           </div>
         </Link>
 

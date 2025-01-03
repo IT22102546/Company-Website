@@ -4,8 +4,16 @@ import 'aos/dist/aos.css';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube, FaTiktok } from 'react-icons/fa';
 
 export default function Footer() {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
+ useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      once: false, 
+      mirror: true, 
+    });
+
+    return () => {
+      AOS.refresh();
+    };
   }, []);
 
   return (

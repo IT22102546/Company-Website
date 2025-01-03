@@ -15,7 +15,15 @@ export default function ContactUs() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({
+      duration: 1000, 
+      once: false, 
+      mirror: true, 
+    });
+
+    return () => {
+      AOS.refresh();
+    };
   }, []);
 
   const handleSubmit = (e) => {
