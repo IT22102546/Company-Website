@@ -10,11 +10,12 @@ import Footer from './Components/Footer'
 export default function App() {
   return (
     <BrowserRouter>
-
         <Header/>
+      <div className='pt-16'>
       <Routes>
         <Route path="/" element={<Home/>}/>    
       </Routes>
+      </div>
       <Footer/>
     </BrowserRouter>
   )
